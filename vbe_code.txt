@@ -1,0 +1,301 @@
+Sub 排座位()
+'
+' 排座位 宏
+'
+' 快捷键: Ctrl+d
+'
+    ActiveWindow.SmallScroll Down:=-21
+    Columns("C:C").Select
+    Selection.Copy
+    Sheets("排序").Select
+    Columns("A:A").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    ActiveWindow.SmallScroll Down:=-27
+    Columns("A:B").Select
+    Application.CutCopyMode = False
+    Selection.Copy
+    Sheets("运算").Select
+    Columns("A:B").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    Columns("B:B").Select
+    Application.CutCopyMode = False
+    ActiveWorkbook.Worksheets("运算").Sort.SortFields.Clear
+    ActiveWorkbook.Worksheets("运算").Sort.SortFields.Add Key:=Range("B1"), SortOn _
+        :=xlSortOnValues, Order:=xlAscending, DataOption:=xlSortNormal
+    With ActiveWorkbook.Worksheets("运算").Sort
+        .SetRange Range("A1:B50")
+        .Header = xlGuess
+        .MatchCase = False
+        .Orientation = xlTopToBottom
+        .SortMethod = xlPinYin
+        .Apply
+    End With
+    Columns("A:A").Select
+    Selection.SpecialCells(xlCellTypeBlanks).Select
+    Selection.EntireRow.Delete
+    ActiveWindow.SmallScroll Down:=-9
+    Range("A22").Select
+    ActiveWindow.SmallScroll Down:=27
+    Range("A47").Select
+    ActiveWindow.SmallScroll Down:=-57
+    Range("A1:A4").Select
+    Selection.Copy
+    Sheets("输出座位表").Select
+    Range("G6:G9").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    Sheets("运算").Select
+    Range("A5:A8").Select
+    Application.CutCopyMode = False
+    Selection.Copy
+    Sheets("输出座位表").Select
+    Range("I6:I9").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    Sheets("运算").Select
+    Range("A9:A12").Select
+    Application.CutCopyMode = False
+    Selection.Copy
+    Sheets("输出座位表").Select
+    Range("F6:F9").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    Sheets("运算").Select
+    Range("A13:A16").Select
+    Application.CutCopyMode = False
+    Selection.Copy
+    Sheets("输出座位表").Select
+    Range("J6:J9").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    Sheets("运算").Select
+    Range("A17:A20").Select
+    Application.CutCopyMode = False
+    Selection.Copy
+    Sheets("输出座位表").Select
+    Range("D6:D9").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    Sheets("运算").Select
+    Range("A21:A24").Select
+    Application.CutCopyMode = False
+    Selection.Copy
+    Sheets("输出座位表").Select
+    Range("L6:L9").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    Sheets("运算").Select
+    Range("A25:A28").Select
+    Application.CutCopyMode = False
+    Selection.Copy
+    Sheets("输出座位表").Select
+    Range("C6:C9").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    Sheets("运算").Select
+    ActiveWindow.SmallScroll Down:=15
+    Range("A29:A32").Select
+    Application.CutCopyMode = False
+    Selection.Copy
+    Sheets("输出座位表").Select
+    Range("M6:M9").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    Sheets("运算").Select
+    Range("A33").Select
+    Application.CutCopyMode = False
+    Selection.Copy
+    Sheets("输出座位表").Select
+    Range("G5").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    Sheets("运算").Select
+    Range("A34").Select
+    Application.CutCopyMode = False
+    Selection.Copy
+    Sheets("输出座位表").Select
+    Range("I5").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    Sheets("运算").Select
+    Range("A35").Select
+    Application.CutCopyMode = False
+    Selection.Copy
+    Sheets("输出座位表").Select
+    Range("F5").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    Sheets("运算").Select
+    Range("A36").Select
+    Application.CutCopyMode = False
+    Selection.Copy
+    Sheets("输出座位表").Select
+    Range("J5").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    Range("D5").Select
+    Sheets("运算").Select
+    Range("A37").Select
+    Application.CutCopyMode = False
+    Selection.Copy
+    Sheets("输出座位表").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    Range("L5").Select
+    Sheets("运算").Select
+    Range("A38").Select
+    Application.CutCopyMode = False
+    Selection.Copy
+    Sheets("输出座位表").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    Sheets("运算").Select
+    Range("A39").Select
+    Application.CutCopyMode = False
+    Selection.Copy
+    Sheets("输出座位表").Select
+    Range("C5").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    Sheets("运算").Select
+    Range("A40").Select
+    Application.CutCopyMode = False
+    Selection.Copy
+    Sheets("输出座位表").Select
+    Range("M5").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    ActiveWindow.SmallScroll Down:=6
+    Sheets("运算").Select
+    Range("A41").Select
+    Application.CutCopyMode = False
+    Selection.Copy
+    Sheets("输出座位表").Select
+    ActiveWindow.SmallScroll Down:=-18
+    Range("G4").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    Sheets("运算").Select
+    Range("A42").Select
+    Application.CutCopyMode = False
+    Selection.Copy
+    Sheets("输出座位表").Select
+    Range("I4").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    Sheets("运算").Select
+    ActiveWindow.SmallScroll Down:=12
+    Range("A43").Select
+    Application.CutCopyMode = False
+    Selection.Copy
+    Sheets("输出座位表").Select
+    Range("F4").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    Sheets("运算").Select
+    Range("A44").Select
+    Application.CutCopyMode = False
+    Selection.Copy
+    Sheets("输出座位表").Select
+    Range("J4").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    Sheets("运算").Select
+    Range("A45").Select
+    Application.CutCopyMode = False
+    Selection.Copy
+    Sheets("输出座位表").Select
+    Range("D4").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    Sheets("运算").Select
+    Range("A46").Select
+    Application.CutCopyMode = False
+    Selection.Copy
+    Sheets("输出座位表").Select
+    Range("L4").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    Sheets("运算").Select
+    Range("A47").Select
+    Application.CutCopyMode = False
+    Selection.Copy
+    Sheets("输出座位表").Select
+    Range("C4").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    Sheets("运算").Select
+    Range("A48").Select
+    Application.CutCopyMode = False
+    Selection.Copy
+    Sheets("输出座位表").Select
+    Range("M4").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    Sheets("运算").Select
+    Range("A49").Select
+    Application.CutCopyMode = False
+    Selection.Copy
+    Sheets("输出座位表").Select
+    Range("G3").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    Sheets("运算").Select
+    Range("A50").Select
+    Application.CutCopyMode = False
+    Selection.Copy
+    Sheets("输出座位表").Select
+    Range("I3").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    Sheets("输入").Select
+    ActiveWindow.SmallScroll Down:=-9
+    Range("A10:A13").Select
+    Application.CutCopyMode = False
+    Sheets("运算").Select
+    Application.CutCopyMode = False
+    Selection.Copy
+    Sheets("输出座位表").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    Range("E1").Select
+    Sheets("输入").Select
+    Range("A10:A13").Select
+    Application.CutCopyMode = False
+    ActiveCell.FormulaR1C1 = "8"
+    Sheets("输入").Select
+    Application.CutCopyMode = False
+    Selection.Copy
+    Sheets("输出座位表").Select
+    Range("E1").Select
+    Sheets("输入").Select
+    Range("A10:A13").Select
+    Application.CutCopyMode = False
+    ActiveCell.FormulaR1C1 = "8"
+    Sheets("输出座位表").Select
+    Range("E1").Select
+    ActiveCell.FormulaR1C1 = "8"
+    Range("F2").Select
+    Sheets("运算").Select
+    ActiveWindow.SmallScroll Down:=-57
+    Columns("A:B").Select
+    Selection.Cut
+    Columns("C:D").Select
+    ActiveSheet.Paste
+    Sheets("排序").Select
+    ActiveWindow.SmallScroll Down:=-15
+    Columns("A:A").Select
+    Selection.ClearContents
+    Sheets("输入").Select
+    ActiveWindow.SmallScroll Down:=-42
+    Range("A11").Select
+    Selection.Copy
+    Sheets("输出座位表").Select
+    Range("E1").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    Sheets("输出座位表").Select
+    Sheets("输出座位表").Copy
+End Sub
